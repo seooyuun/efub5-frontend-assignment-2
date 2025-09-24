@@ -1,32 +1,63 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const CountrySelectButton = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px;
+
+  button {
+    width: 90px;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #fff;
+    font-size: 14px;
+    transition: ease-out 0.2s;
+
+    &:hover {
+      background: #f0f0f0;
+    }
+  }
 `;
 
-export const ProductCard = styled.div`
+export const Container = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding: 20px;
+  justify-items: center;
+`;
+
+export const TvShowsCard = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 500px;
-  border: 1px solid #ddd;
+  width: 300px;
+  border: 1px solid #ccc;
   border-radius: 12px;
-  padding: 16px;
-  margin-bottom: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: ease-out 0.2s;
+
+  &:hover {
+    background: #eee;
+  }
 `;
 
-export const ProductImage = styled.img`
-  width: 70px;
-  height: 70px;
-  object-fit: contain;
-  margin-right: 16px;
+export const TvShowsImage = styled.img`
+  height: 150px;
+  object-fit: cover;
+  margin-right: 20px;
+  border-radius: 10px;
+  background-color: #f0f0f0;
 `;
 
-export const ProductDetails = styled.div`
+export const TvShowsDetails = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,18 +66,26 @@ export const ProductDetails = styled.div`
 
   p {
     margin: 0;
-    font-size: 14px;
-    color: #333;
+    font-size: 15px;
+    color: #222;
 
     &:first-child {
       font-weight: bold;
-      font-size: 16px;
+      font-size: 17px;
+    }
+
+    &:nth-child(2) {
+      color: #444;
+    }
+
+    &:nth-child(3) {
+      color: #ffc200;
     }
   }
 `;
 
 export const LoadMoreButton = styled.div`
-  margin: 20px;
+  width: 300px;
   padding: 12px 24px;
   background-color: #f8f8f8;
   border: 1px solid #ddd;
