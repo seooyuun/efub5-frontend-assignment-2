@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import './App.css';
-import * as S from './App.styles.jsx';
+import * as S from './App.styles';
+
+// 국가 코드 타입
+type CountryCode = 'ALL' | 'KR' | 'US' | 'JP';
 
 // getPosts 함수 정의
 export const getPosts = async ({ pageParam = 1, country = 'ALL' }) => {
@@ -30,7 +33,7 @@ export const getPosts = async ({ pageParam = 1, country = 'ALL' }) => {
 
 const App = () => {
   const [target, setTarget] = useState(null);
-  const [country, setCountry] = useState('ALL');
+  const [country, setCountry] = useState<CountryCode>('ALL');
 
   const {
     data,
@@ -49,7 +52,7 @@ const App = () => {
         : undefined,
   });
 
-  const handleCountryChange = (newCountry) => {
+  const handleCountryChange = (newCountry: CountryCode) => {
     setCountry(newCountry);
   };
 
@@ -87,7 +90,7 @@ const App = () => {
         <button onClick={() => handleCountryChange('JP')}>🇯🇵 일본</button>
       </S.CountrySelectButton>
       <S.Container>
-        {data.pages.map((group, idx) => (
+        {data!.pages.map((group, idx) => (
           <React.Fragment key={idx}>
             {group.tvShows.map(
               ({ id, name, original_name, vote_average, poster_path }) => (
