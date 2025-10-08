@@ -19,7 +19,7 @@ export default function AboutPage() {
         />
         <Image
           src='https://pbs.twimg.com/media/G1YW_zpaMAEABEG?format=jpg&name=medium'
-          alt='주익연'
+          alt='actor'
           width={300}
           height={300}
           placeholder='blur'
